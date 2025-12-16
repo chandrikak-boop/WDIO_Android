@@ -1,0 +1,4 @@
+{
+  "appPackage": "io.appium.android.apis",
+  "appActivity": "io.appium.android.apis.view.Controls2"
+}

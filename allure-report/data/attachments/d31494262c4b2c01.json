@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "//android.view.View[@resource-id=\"io.appium.android.apis:id/drag_dot_2\"]"
+}
