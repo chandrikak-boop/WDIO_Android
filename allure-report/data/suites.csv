@@ -1,4 +1,0 @@
-"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","2867","switch demo","Android Locators","2025-12-15","passed","2025-12-15","","","",""
-"","3240","drag and drop demo","Android Locators","2025-12-15","broken","2025-12-15","","","",""
-"","3594","checkbox demo","Android Locators","2025-12-15","broken","2025-12-15","","","",""

@@ -26,7 +26,7 @@ export const config = {
     // of the config file unless it's absolute.
     //
     specs: [
-        './test/specs/android-native.spec.js'
+        './test/specs/ios/POM_todoList.spec.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -54,16 +54,31 @@ export const config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [{
-        // capabilities for local Appium web tests on an Android Emulator
-        'appium:platformName': process.env.PLATFORM_NAME,
-        'appium:deviceName': process.env.DEVICE_NAME,
-       'appium:platformVersion': process.env.PLATFORM_VERSION,
-        'appium:automationName': 'UiAutomator2',
-        'appium:app': process.env.APP_PATH,
-        "appium:autoGrantPermissions": true
-    }],
+    capabilities: [
+    // {
+    //     // capabilities for local Appium web tests on an Android Emulator
+    //     'appium:platformName': process.env.PLATFORM_NAME,
+    //     'appium:deviceName': process.env.DEVICE_NAME,
+    //    'appium:platformVersion': process.env.PLATFORM_VERSION,
+    //     'appium:automationName': 'UiAutomator2',
+    //     'appium:app': process.env.APP_PATH,
+    //     "appium:autoGrantPermissions": true
+    // },
 
+       { // capabilities for local Appium web tests on an iOS Emulator
+        'appium:platformName': "ios",
+    //     'appium:deviceName': "iPhone 14 Plus",
+    //    'appium:platformVersion': "16.0",
+        'appium:deviceName': "iPhone 16",
+        'appium:platformVersion': "26.2",
+        'appium:automationName': 'XCUITest',
+        'appium:app': "/Users/testvagranttechnologies/Desktop/Projects/wdio_appium_mobile/app/ios/MVCTodo.app",
+        //'appium:app': "/Users/testvagranttechnologies/Desktop/Projects/wdio_appium_mobile/app/ios/UIKitCatalog.app",
+        'appium:noReset': false,
+        'appium:fullReset': false,
+        'appium:useNewWDA': true
+    }
+],
     //
     // ===================
     // Test Configurations

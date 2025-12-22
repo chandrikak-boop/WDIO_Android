@@ -15,7 +15,7 @@ for(let i=0;i<arr.length;i++)
     }
 }
 
-console.log(obj);
+console.log(Object.keys(obj));
 console.log("unique count: "+count);
 
 for(let key in obj){
