@@ -13,7 +13,7 @@ import {config} from './wdio.shared.conf.js';
     //     'appium:deviceName': "iPhone 14 Plus",
     //    'appium:platformVersion': "16.0",
         'appium:deviceName': "iPhone 16",
-        'appium:platformVersion': "26.2",
+        'appium:platformVersion': "26.0",
         'appium:automationName': 'XCUITest',
         'appium:app': "./app/ios/MVCTodo.app",
         //'appium:app': "/Users/testvagranttechnologies/Desktop/Projects/wdio_appium_mobile/app/ios/UIKitCatalog.app",
