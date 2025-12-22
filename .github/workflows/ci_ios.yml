@@ -28,7 +28,7 @@ jobs:
       - name: Build iOS App
         run: |
           xcodebuild \
-            -workspace ./app/ios/MVCTodo.xcworkspace \
+            -project ./app/ios/MVCTodo.xcodeproj \
             -scheme MVCTodo \
             -sdk iphonesimulator \
             -destination 'platform=iOS Simulator,name=iPhone 16,OS=16.2' \
