@@ -1,26 +1,27 @@
 name: CI
 on: [push, pull_request]
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-        - name: ⬇️ Checkout Code
-          uses: actions/checkout@v4
+      - name: ⬇️ Checkout Code
+        uses: actions/checkout@v4
 
-        - name: 🐢 Setup Node
-          uses: actions/setup-node@v4
-          with:
-            node-version-file: '.nvmrc'
+      - name: 🐢 Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 25.2.1  # Node version
 
-        - name: 🏗️ Install Dependencies
-          run: npm install
+      - name: 🏗️ Install Dependencies
+        run: npm install
 
-        - name: 🧪 Test
-          run: npx wdio run wdio.ios.conf.js --spec ./test/specs/ios/POM_todoList.spec.js || exit 0
+      - name: 🧪 Test
+        run: npx wdio run wdio.ios.conf.js --spec ./test/specs/ios/POM_todoList.spec.js || exit 0
 
-        - name: 📦 Upload Logs
-          uses: actions/upload-artifact@v4
-          if: failure()
-          with:
-            name: logs
-            path: logs
+      - name: 📦 Upload Logs
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: logs
+          path: logs
