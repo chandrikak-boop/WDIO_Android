@@ -3,8 +3,7 @@ import allure from '@wdio/allure-reporter';
 import dotenv from 'dotenv';
 dotenv.config();
 export const config = {
-    //
-    // ====================
+    //  // ====================
     // Runner Configuration
     // ====================
     // WebdriverIO supports running e2e tests as well as unit and component tests.
@@ -25,9 +24,7 @@ export const config = {
     // The path of the spec files will be resolved relative from the directory of
     // of the config file unless it's absolute.
     //
-    specs: [
-        './test/specs/ios/POM_todoList.spec.js'
-    ],
+   
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
@@ -55,29 +52,7 @@ export const config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [
-    // {
-    //     // capabilities for local Appium web tests on an Android Emulator
-    //     'appium:platformName': process.env.PLATFORM_NAME,
-    //     'appium:deviceName': process.env.DEVICE_NAME,
-    //    'appium:platformVersion': process.env.PLATFORM_VERSION,
-    //     'appium:automationName': 'UiAutomator2',
-    //     'appium:app': process.env.APP_PATH,
-    //     "appium:autoGrantPermissions": true
-    // },
-
-       { // capabilities for local Appium web tests on an iOS Emulator
-        'appium:platformName': "ios",
-    //     'appium:deviceName': "iPhone 14 Plus",
-    //    'appium:platformVersion': "16.0",
-        'appium:deviceName': "iPhone 16",
-        'appium:platformVersion': "26.2",
-        'appium:automationName': 'XCUITest',
-        'appium:app': "/Users/testvagranttechnologies/Desktop/Projects/wdio_appium_mobile/app/ios/MVCTodo.app",
-        //'appium:app': "/Users/testvagranttechnologies/Desktop/Projects/wdio_appium_mobile/app/ios/UIKitCatalog.app",
-        'appium:noReset': false,
-        'appium:fullReset': false,
-        'appium:useNewWDA': true
-    }
+   
 ],
     //
     // ===================
