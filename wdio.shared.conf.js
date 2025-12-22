@@ -52,9 +52,7 @@ export const config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [
-    {connectionRetryTimeout: 300000,
-    connectionRetryCount: 3,
-}
+
    
 ],
     //

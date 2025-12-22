@@ -20,11 +20,6 @@ import {config} from './wdio.shared.conf.js';
         'appium:noReset': false,
         'appium:fullReset': false,
         'appium:useNewWDA': true,
-
-        wdaLaunchTimeout: 300000,
-  wdaConnectionTimeout: 300000,
-  newCommandTimeout: 300,
-  noReset: true,
     }]
 
 export { config };
