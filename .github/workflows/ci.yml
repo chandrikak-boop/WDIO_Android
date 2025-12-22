@@ -2,7 +2,7 @@ name: CI
 on: [push, pull_request]
 
 jobs:
-  build:
+  ios-build:
     runs-on: macos-latest
     steps:
       - name: ⬇️ Checkout Code
@@ -11,12 +11,12 @@ jobs:
       - name: 🐢 Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 25.2.1  # Node version
+          node-version: 20  # safer Node LTS
 
       - name: 🏗️ Install Dependencies
         run: npm install
 
-      - name: 🧪 Test
+      - name: 🧪 Run iOS Tests
         run: npx wdio run wdio.ios.conf.js --spec ./test/specs/ios/POM_todoList.spec.js || exit 0
 
       - name: 📦 Upload Logs
@@ -24,4 +24,4 @@ jobs:
         if: failure()
         with:
           name: logs
-          path: logs
+          path: ./logs/**/*
