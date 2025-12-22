@@ -1,6 +1,7 @@
 name: iOS CI
 
 on:
+  workflow_dispatch:  # This allows manual triggering in GitHub Actions
   push:
   pull_request:
 
