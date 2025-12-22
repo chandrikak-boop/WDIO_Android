@@ -19,7 +19,12 @@ import {config} from './wdio.shared.conf.js';
         //'appium:app': "/Users/testvagranttechnologies/Desktop/Projects/wdio_appium_mobile/app/ios/UIKitCatalog.app",
         'appium:noReset': false,
         'appium:fullReset': false,
-        'appium:useNewWDA': true
+        'appium:useNewWDA': true,
+
+        wdaLaunchTimeout: 300000,
+  wdaConnectionTimeout: 300000,
+  newCommandTimeout: 300,
+  noReset: true,
     }]
 
 export { config };
