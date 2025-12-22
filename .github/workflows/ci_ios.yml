@@ -20,11 +20,6 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Install CocoaPods
-        run: |
-          cd ./app/ios
-          pod install
-
       - name: Install Appium and XCUITest Driver
         run: |
           npm install -g appium
