@@ -1,21 +1,37 @@
-name: CI
-on: [push, pull_request]
+name: iOS CI
+
+on:
+  workflow_dispatch:  # manual trigger
+  push:
+  pull_request:
+
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  ios-tests:
+    runs-on: macos-latest
+
     steps:
-        - name: Checkout
-          uses: actions/checkout@v2
-        - uses: actions/setup-node@v1
-          with:
-            node-version: 16.3.0
-        - name: Install node
-          run: npm install
-        - name: Run Tests
-          run: npx wdio run wdio.ios.conf.js --spec ./test/specs/ios/POM_todoList.spec.js || exit 0
-        - name: 📦 Upload Logs
-          uses: actions/upload-artifact@v4
-          if: failure()
-          with:
-            name: logs
-            path: logs
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Install Appium and XCUITest Driver
+        run: |
+          npm install -g appium
+          appium driver install xcuitest
+
+      - name: Run iOS Tests
+        run: npx wdio run wdio.ios.conf.js --spec ./test/specs/ios/POM_todoList.spec.js || exit 0
+
+      - name: Upload Logs on Failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: logs
+          path: ./logs/**
