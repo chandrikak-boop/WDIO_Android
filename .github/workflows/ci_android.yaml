@@ -1,24 +1,33 @@
 name: CI Android
+
 on: [push, pull_request]
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-        - name: Checkout
-          uses: actions/checkout@v2
-        - uses: actions/setup-node@v1
-          with:
-            node-version: 16.3.0
-        - name: Install node
-          run: npm install
-        - name: Run Tests
-          env:
-            BROWSERSTACK_USER: ${{ secrets.BS_USER }}
-            BROWSERSTACK_KEY: ${{ secrets.BS_KEY }}
-          run: npx wdio wdio.android.bs.conf.js --spec ./test/specs/android/addNote.spec.js || exit 0
-        - name: 📦 Upload Logs
-          uses: actions/upload-artifact@v4
-          if: failure()
-          with:
-            name: logs
-            path: logs
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run WDIO Android tests
+        env:
+          BROWSERSTACK_USER: ${{ secrets.BS_USER }}
+          BROWSERSTACK_KEY: ${{ secrets.BS_KEY }}
+        run: npx wdio wdio.android.bs.conf.js --spec ./test/specs/android/addNote.spec.js
+
+      - name: 📦 Upload Logs
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: logs
+          path: logs
