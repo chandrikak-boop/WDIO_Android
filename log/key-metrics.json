@@ -518,5 +518,55 @@
         "success": true,
         "failure": null,
         "worker": 43399
+    },
+    {
+        "name": "sdk:testhub",
+        "entryType": "measure",
+        "startTime": 464.36120903491974,
+        "duration": 1166.020124912262,
+        "detail": null,
+        "success": true,
+        "failure": null,
+        "worker": 53261
+    },
+    {
+        "name": "sdk:percy",
+        "entryType": "measure",
+        "startTime": 1648.2354999780655,
+        "duration": 0.4394170045852661,
+        "detail": null,
+        "success": true,
+        "failure": null,
+        "worker": 53261
+    },
+    {
+        "name": "sdk:automate:local",
+        "entryType": "measure",
+        "startTime": 1648.768916964531,
+        "duration": 0.2777920961380005,
+        "detail": null,
+        "success": true,
+        "failure": null,
+        "worker": 53261
+    },
+    {
+        "name": "sdk:automate:hub-management",
+        "entryType": "measure",
+        "startTime": 5899.782124996185,
+        "duration": 1831.3437089920044,
+        "detail": null,
+        "success": true,
+        "failure": null,
+        "worker": 53261
+    },
+    {
+        "name": "sdk:automate:print-buildlink",
+        "entryType": "measure",
+        "startTime": 52468.894291996956,
+        "duration": 995.9828330278397,
+        "detail": null,
+        "success": true,
+        "failure": null,
+        "worker": 53261
     }
 ]

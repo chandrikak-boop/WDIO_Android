@@ -6,16 +6,16 @@ import {config} from './wdio.shared.conf.js';
     runner: 'local',
     config.port=4723,
     config.specs = [
-            './test/specs/ios/POM_todoList.spec.js'
+            './test/specs/ios/web**.spec.js'
         ]
     config.capabilities = [{ // capabilities for local Appium web tests on an iOS Emulator
         'appium:platformName': "ios",
     //     'appium:deviceName': "iPhone 14 Plus",
     //    'appium:platformVersion': "16.0",
-        'appium:deviceName': "iPhone 14",
-        'appium:platformVersion': "18.4",
+        'appium:deviceName': "iPhone 16",
+        'appium:platformVersion': "26.2",
         'appium:automationName': 'XCUITest',
-        'appium:app': "./app/ios/MVCTodo.app",
+        'appium:app': "./app/ios/wdiodemoapp.app",
         //'appium:app': "/Users/testvagranttechnologies/Desktop/Projects/wdio_appium_mobile/app/ios/UIKitCatalog.app",
         'appium:noReset': false,
         'appium:fullReset': false,

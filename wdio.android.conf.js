@@ -6,15 +6,15 @@ import {config} from './wdio.shared.conf.js';
     runner: 'local',
     config.port=4723,
     config.specs = [
-            'test/specs/android/addNote.spec.spec.js'
+            'test/specs/android/webview.spec.js'
         ]
     config.capabilities = [ {
         // capabilities for local Appium web tests on an Android Emulator
         'appium:platformName': "android",
-        'appium:deviceName': "Google Pixel 7",
-       'appium:platformVersion': "13.0",
+        'appium:deviceName': "Pixel 9",
+       'appium:platformVersion': "16.0",
         'appium:automationName': 'UiAutomator2',
-        'appium:app': "app/android/ApiDemos-debug.apk",
+        'appium:app': "app/android/ColorNote_Notepad.apk",
         "appium:autoGrantPermissions": true
     }]
        //
@@ -34,4 +34,4 @@ import {config} from './wdio.shared.conf.js';
   }]
 ]
 
-exports.config = config;
+export {config};
