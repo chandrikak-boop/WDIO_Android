@@ -6,7 +6,7 @@ import {config} from './wdio.shared.conf.js';
     runner: 'local',
     config.port=4723,
     config.specs = [
-            './test/specs/ios/web**.spec.js'
+            './test/specs/ios/POM_todoList.spec.js'
         ]
     config.capabilities = [{ // capabilities for local Appium web tests on an iOS Emulator
         'appium:platformName': "ios",
